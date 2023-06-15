@@ -14,6 +14,9 @@ texinfo gcc-multilib build-essential chrpath socat cpio python python3 python3-p
 python3-pexpect xz-utils debianutils iputils-ping libsdl1.2-dev xterm p7zip-full libyaml-dev \
 libssl-dev locales sudo flex bison bc device-tree-compiler
 
+# kmod: depmod is required by "make modules_install"
+RUN apt-get update && apt-get install -y kmod expect patchelf
+
 RUN locale-gen en_US.UTF-8
 
 ENV LANG en_US.UTF-8
